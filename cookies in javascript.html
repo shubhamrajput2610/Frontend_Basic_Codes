@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function Setcookie() {
+
+            document.cookie = "username = Virat"
+            alert("saved");
+        }
+        function Getcookie() {
+
+            var name = document.cookie;
+            document.getElementById("msg").innerHTML = "Welcome  " + name;
+
+        }
+
+        function RemoveData() {
+
+            document.cookie = "username = "
+            alert("User Removed successfully");
+            Getcookie()
+            document.getElementById("msg").innerHTML = ""
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Setcookie" onclick="Setcookie()" />
+    <input type="button" value="Getcookie" onclick="Getcookie()" />
+    <input type="button" value="RemoveData" onclick="RemoveData()" />
+    <h1 id="msg"></h1>
+</body>
+</html>
