@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+
+        var totalno = 0, yes = 0, no = 0;
+
+        function sarvey() {
+
+
+            var ry = document.getElementById("ryes");
+            var rn = document.getElementById("rno");            var data = " "
+            if (ry.checked) {
+
+                yes++;
+            } else if(rn.checked){
+                no++;
+            }
+            else {
+                alest("PLease Select any of one Yes or no ");
+            }
+            totalno = yes + no;
+
+
+
+            document.getElementById("yes").innerHTML = "total yes = " +yes;
+            document.getElementById("no").innerHTML = "total No = " + no;
+            document.getElementById("total").innerHTML = "total yes and no= " + totalno;
+        }
+        </script>
+
+
+    </head>
+    <body>
+
+
+        <h1> Do you Know HTML ? </h1>
+    
+
+        <input type="radio" name="dadu" id="ryes" /> YES <br /><b />
+        <input type="radio" name="dadu" id="rno" /> NO <br /> <br />
+
+        <input type="button" value="select" onclick="sarvey()">
+
+        <h2 id="yes"> </h2>
+        <h2 id="no"> </h2>
+        <h2 id="total"> </h2>
+
+    </body>
+    </html>
