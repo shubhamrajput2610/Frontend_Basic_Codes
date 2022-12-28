@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+
+
+    <style>
+        #dv1{
+            background-color:red;
+            height:100px;
+            width:100px;
+           border:double
+                
+        }
+        #dv2 {
+            background-color: #ffd800;
+            height: 100px;
+            width: 100px;
+            border: double;
+        }
+        #dv3 {
+            background-color: #b6ff00;
+            height: 100px;
+            width: 100px;
+            border: double;
+        }
+        </style>
+
+
+        <script> 
+        
+        $(document).ready(function () {
+           
+            $("#hide1").click(function () {
+                $("#dv1").hide(1000)
+                $("#dv2").hide(2000)
+                $("#dv3").hide(3000)
+     
+            })
+
+            $("#show1").click(function () {
+                $("#dv1").show(1000)
+                $("#dv2").show(2000)
+                $("#dv3").show(3000)
+
+            })
+
+            $("#toogle1").click(function () {
+          
+                $("#dv1").toggle(1000)
+                $("#dv2").toggle(2000)
+                $("#dv3").toggle(3000)
+
+            })
+
+            $("#fidin1").click(function () {
+                
+                $("#dv1").fadeIn(1000)
+                $("#dv2").fadeIn(2000)
+                $("#dv3").fadeIn(3000)
+
+            })
+
+            $("#fidout1").click(function () {
+           
+                $("#dv1").fadeOut(1000)
+                $("#dv2").fadeOut(2000)
+                $("#dv3").fadeOut(3000)
+
+            })
+
+            $("#feadtoggle1").click(function () {
+               
+                $("#dv1").fadeToggle(1000)
+                $("#dv2").fadeToggle(2000)
+                $("#dv3").fadeToggle(3000)
+
+            })
+
+
+            $("#slideup1").click(function () {
+              
+                $("#dv1").slideUp(1000)
+                $("#dv2").slideUp(2000)
+                $("#dv3").slideUp(3000)
+
+            })
+
+            $("#slidedown1").click(function () {
+
+
+                $("#dv1").slideDown(1000)
+                $("#dv2").slideDown(2000)
+                $("#dv3").slideDown(3000)
+
+            })
+
+            $("#slidetoggle1").click(function () {
+           
+                $("#dv1").slideToggle(1000)
+                $("#dv2").slideToggle(2000)
+                $("#dv3").slideToggle(3000)
+            })
+
+      
+   
+        })
+           </script> 
+
+    
+
+</head>
+<body>
+
+     <input value="show" id="show1"type="button"/>
+    <input value="hide" type="button" id="hide1" />
+    <input value="toogle" type="button" id="toogle1" />
+
+    <input value="fidin" id="fidin1" type="button" />
+    <input value="fidout" type="button" id="fidout1" />
+    <input value="feadtoggle" type="button" id="feadtoggle1" />
+
+    <input value="slideup" type="button" id="slideup1" />
+    <input value="slidedown" type="button" id="slidedown1" />
+    <input value="slidetoggle" type="button" id="slidetoggle1" />
+
+
+
+    <hr />
+    <div id="dv1"> </div>
+    <div id="dv2"> </div>
+    <div id="dv3"> </div>
+
+</body>
+</html>
