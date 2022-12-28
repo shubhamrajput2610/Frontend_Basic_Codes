@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+
+    <script>
+        var student = []
+        $(document).ready(function () {
+        
+
+            $("#id1").click(function(){
+                var a = $("#roll1").val()
+                var b = $("#name1").val()
+                var c = $("#mark1").val()
+
+                var aa = { "Rollno1": a, "name1": b, "mark": c }
+                student.push(aa)
+                console.log(student)
+                $("#iddd1").empty();
+                //var data = " "
+                var i;
+                for(i=0;i<student.length;i++)
+                {
+                    //data += "<tr><td>" + student[i].Rollno1 + "</td><td>" + student[i].name1 + "</td><td>" + student[i].mark 
+                    //    +"</td></tr>"
+                    $("#iddd1").append("<tr><td>" + student[i].Rollno1 + "</td><td>" + student[i].name1 + "</td><td>" + student[i].mark
+                            +"</td></tr>")
+                
+                }
+             
+                
+                $("#roll1").val(" ")
+                $("#name1").val(" ")
+                $("#mark1").val(" ")
+
+                //$("#iddd1").html(data)
+
+             
+
+            })
+
+
+
+
+
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+
+    <table border="1">
+        <tr><td>Roll no</td><td><input type="text" id="roll1"/></td> </tr>
+        <tr><td>NAme</td> <td><input type="text" id="name1" /></td></tr>
+        <tr><td>MArk</td> <td><input type="text" id="mark1" /></td></tr>
+
+
+        <tr><td><input type="button" id="id1" value="submite" /></td></tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>Roll no</th>
+            <th>NAme</th>
+            <th>MArk</th>
+        </tr>
+        <tbody id="iddd1"></tbody>
+    </table>
+
+</body>
+</html>
