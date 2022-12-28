@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function SetData() {
+
+            localStorage.setItem("username", "Virat");
+            alert("User stored successfully");
+        }
+        function GetData() {
+
+            var name = localStorage.getItem("username");
+            document.getElementById("msg").innerHTML = "Welcome" + name;
+
+        }
+
+        function RemoveData() {
+
+            localStorage.removeItem("username");
+            alert("User Removed successfully");
+            GetData();
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="SetData" onclick="SetData()" />
+    <input type="button" value="GetData" onclick="GetData()" />
+    <input type="button" value="RemoveData" onclick="RemoveData()" />
+    <h1 id="msg"></h1>
+</body>
+</html>
