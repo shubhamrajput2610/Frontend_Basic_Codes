@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        student = []
+        function jcbtime() {
+            var date1 = document.getElementById("d1").value;
+            var time1 = document.getElementById("t1").value;
+            var date2 = document.getElementById("d2").value;
+            var time2 = document.getElementById("t2").value;
+            var rest1 = document.getElementById("r1").value;
+            var value1 = document.getElementById("r2").value;
+            var date11 = new Date(date1);
+            var date21 = new Date(date2);
+
+            var timed = ((((date21 - date11) / 1000) / 60) / 60);
+
+
+            var time11 = new Date("11 10 2022 " + time1);
+            var time21 = new Date("11 10 2022 " + time2);
+
+            var time = time21 - time11;
+            var sec = time / 1000;
+            var min = sec / 60;
+
+            var hrs = Math.floor(min / 60);
+            var m = (min % 60);
+
+            var ttime = timed + hrs;
+
+            document.getElementById("tt12").value = ttime+ " hrs";
+
+            var t = ttime - rest1;
+            var am = t * value1;
+            document.getElementById("f1").value = t + " hrs";
+            document.getElementById("f2").value = am + " rs";
+
+          
+        }
+        function display() {
+
+            var date1 = document.getElementById("d1").value;
+            var time1 = document.getElementById("t1").value;
+            var date2 = document.getElementById("d2").value;
+            var time2 = document.getElementById("t2").value;
+            var rest1 = document.getElementById("r1").value;
+            var value1 = document.getElementById("r2").value;
+            var ttime = document.getElementById("tt12").value
+            var t=  document.getElementById("f1").value 
+            var am =  document.getElementById("f2").value  
+
+            var f = { "a1": date1, "a2": time1, "a3": date2, "a4": time2, "a5": rest1, "a6": value1, "a7": ttime, "a8": t, "a9": am }
+
+            student.push(f);
+            console.log(student);
+            json123()
+        }
+        function json123() {
+
+      
+
+            var data = " "
+            var i;
+            for (i = 0; i < student.length; i++) {
+
+                data += "<tr><td>" + student[i].a1 +
+                        "</td><td>" + student[i].a2 +
+                        "</td><td>" + student[i].a3 +
+                        "</td><td>" + student[i].a4 +
+                        "</td><td>" + student[i].a5 +
+                        "</td><td>" + student[i].a6 +
+                        "</td><td>" + student[i].a7 +
+                        "</td><td>" + student[i].a8 +
+                        "</td><td>" + student[i].a9 +
+                        "</td></tr>"
+
+            }
+            document.getElementById("new1").innerHTML = data
+
+           
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+    <form>
+
+        <label> Start date </label> <input type="date" onchange="jcbtime()" id="d1" /><br /><br />
+        <label> Start time </label> <input type="time" onchange="jcbtime()" id="t1" /><br /><br />
+        <label> End date </label> <input type="date" onchange="jcbtime()" id="d2" /><br /><br /> 
+        <label> End time </label> <input type="time" onchange="jcbtime()" id="t2" /><br /><br />
+        <label> Rest time </label> <input type="text" onchange="jcbtime()" id="r1" /><br /><br />
+        <label> Rate per Hour </label> <input onchange="jcbtime()" type="number" id="r2" /><br /><br />
+        <label> Total hours </label> <input type="text" id="tt12" /><br /><br />
+        <label> Total Working Hour </label> <input type="text" onchange="jcbtime()" id="f1" /><br /><br />
+        <label> Total Amount </label> <input type="text"  id="f2" /><br /><br />
+      
+          <input type="button" value="submite" onclick="display()" /><br /><br />
+    </form>
+
+    <table id="table2" border="1">
+        <thead>
+            <tr>
+                <th> Start date </th>
+                <th> Start time </th>
+                <th> End date </th>
+                <th> End time </th>
+                <th> Rest hour </th>
+                <th> Rate per Hour </th>
+                <th> Total hours </th>
+                <th> Total Working Hour </th>
+                <th> Total Amount </th>
+            </tr>
+        </thead>
+        <tbody id="new1">
+    </table>
+
+</body>
+</html>
