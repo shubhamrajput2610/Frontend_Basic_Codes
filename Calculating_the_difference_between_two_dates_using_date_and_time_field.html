@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time calculate</title>
+    <script>
+
+        function Calculate() {
+            var a = document.getElementById("sd").value;
+            var b = document.getElementById("ed").value;
+            var adt = new Date(a);
+            var bdt = new Date(b);
+            var timed = ((((bdt - adt) / 1000) / 60) / 60);
+            // document.getElementById("abc").innerHTML=timed;
+
+            var s = document.getElementById("st").value;
+            var e = document.getElementById("et").value;
+            var r = document.getElementById("rest").value;
+            var c = document.getElementById("rate").value;
+
+            var sdt = new Date("11 10 2022 " + s);
+            var edt = new Date("11 10 2022 " + e);
+            var time = edt - sdt;
+            var sec = time / 1000;
+            var min = sec / 60;
+
+            var hrs = Math.floor(min / 60);
+            var m = (min % 60);
+
+            var ttime = timed + hrs;
+
+            document.getElementById("abd").innerHTML = "total time is = " + ttime + " hrs";
+
+            var t = ttime - r;
+            var am = t * c;
+            document.getElementById("abe").innerHTML = "total time of working is = " + t + " hrs";
+            document.getElementById("abf").innerHTML = "total amount to pay = " + am + " rs";
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <label>Starting date</label>
+    <input type="date" id="sd">
+    <br><br>
+    <label>Starting Time</label>
+    <input type="time" id="st">
+    <br><br>
+    <label>Ending date</label>
+    <input type="date" id="ed">
+    <br><br>
+    <label>Ending Time</label>
+    <input type="time" id="et">
+    <br><br>
+    <label>Rest</label>
+    <input type="text" id="rest">
+    <br><br>
+    <label>Rate per hour</label>
+    <input type="text" id="rate">
+    <br><br>
+    <input type="button" value="Calculate" onclick="Calculate()">
+    <h2 id="abc"></h2>
+    <h2 id="abd"></h2>
+    <h2 id="abe"></h2>
+    <h2 id="abf"></h2>
+</body>
+</html>
