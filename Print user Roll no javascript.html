@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function Fianl() {
+
+            var Roll_no = Number(document.getElementById("textroll").value);
+
+            document.getElementById("textrol").innerHTML = +Roll_no;
+
+
+            var NAMe = (document.getElementById("textNo1").value);S
+            document.getElementById("textNa").innerHTML = +NAMe;
+        }
+    </script>
+
+
+</head>
+<body>
+
+    <table border="1">
+
+        <tr>
+            <th>
+                Roll no:
+            </th>
+            <td> <input type="text" id="textroll" /> </td>
+        </tr>
+
+        <tr>
+            <th>
+                NAme:
+            </th>
+            <td> <input type="text" id="textNo1" /> </td>
+        </tr>
+
+      
+
+    <tr>
+       
+        <td> <input type="button" value="Submit" onclick="Fianl()" /> </td>
+      
+    </tr>
+
+    </table>
+
+
+    <h2 id="textrol">   </h2>
+    <h2 id="textNa">   </h2>
+
+</body>
+</html>
