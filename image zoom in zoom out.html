@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <script src="jquery.min.js"></script>
+
+    <title></title>
+
+    <style>
+
+      
+    </style>
+
+    <script>
+
+
+        $(document).ready(function(){
+            $("#zoomin1").click(function () {
+                $("img").animate({ "height": "+=100px", "width": "+=100px" });
+                $("img").animate({ "height": "+=100px", "width": "+=100px" });
+               
+
+            })
+            $("#zoomout1").click(function () {
+                $("img").animate({ "height": "+=100px", "width": "-=100px" });
+                $("img").animate({ "height": "+=100px", "width": "-=100px" });
+           
+        })
+        })
+    </script>
+</head>
+<body>
+
+    <input value="zoom in" type="button" id="zoomin1" />
+    <input value="z0om out" type="button" id="zoomout1" />
+
+    <div id="img" style="border:solid 5px ;width:500px;height:350px;position:absolute;overflow:hidden">
+        <img src="1.jpeg"  style="height:300px;width:500px;display:flex"/>
+    </div>
+
+</body>
+</html>
