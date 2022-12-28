@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            var a = [{ "rolno": 1, "name": "ganesh" },
+                        {"rolno":2,"name":"Ram"}]
+
+            $.each(a, function (i, d) {
+                $("#mydata").append("<li>"+d.rolno+" "+d.name+"</li>")
+
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="mydata"></ul>
+</body>
+</html>
