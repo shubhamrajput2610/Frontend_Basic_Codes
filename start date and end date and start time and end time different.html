@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function calculate() {
+
+            var a = document.getElementById("sd").value
+            var b = document.getElementById("ed").value
+
+            var c = new Date(a)
+            var d = new Date(b)
+            var time = (d - c)
+
+            var seconds = time / 1000
+            var Minutes = seconds / 60
+            var Hours = Minutes / 60
+            var Days = Hours / 24
+
+            document.getElementById("abcd").innerHTML = "Miliseconds=" +time
+            document.getElementById("abcd1").innerHTML = "seconds=" +seconds
+            document.getElementById("abcd2").innerHTML = "Minutes=" +Minutes
+            document.getElementById("abcd3").innerHTML = "Hours=" +Hours
+            document.getElementById("abcd4").innerHTML = "Days=" +Days
+        }
+
+        function calculatetime() {
+            var x = document.getElementById("st").value
+            var y = document.getElementById("et").value
+
+            var z = new Date("12 12 2022 " + x)
+            var w = new Date("12 12 2022 " + y)
+
+            var time = (((w - z) / 1000) / 60)
+            var h = Math.floor(time/ 60)
+            var m = (time%60)
+            console.log(h)
+            console.log(m)
+            document.getElementById("abcd5").innerHTML = h+":"+m
+           
+        }
+
+    </script>
+</head>
+<body>
+
+
+
+    <h1> start date<input type="date" id="sd" /></h1>
+    <h1>end date<input type="date" id="ed" /></h1>
+
+    <input type="button"value="Submite" onclick="calculate()"/>
+    <h1 id="abc"></h1>
+
+
+
+    <h1> start time<input type="time" id="st" /></h1>
+    <h1>end time<input type="time" id="et" /></h1>
+
+    <input type="button" value="Submite" onclick="calculatetime()" />
+
+    <h1 id="abcd"></h1>
+    <h1 id="abcd1"></h1>
+    <h1 id="abcd2"></h1>
+    <h1 id="abcd3"></h1>
+    <h1 id="abcd4"></h1>
+    <h1 id="abcd5"></h1>
+
+</body>
+</html>
