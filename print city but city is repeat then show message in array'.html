@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        var ab = []
+        function display() {
+            var a = document.getElementById("number1").value
+            var i = ab.indexOf(a.toUpperCase());
+            console.log(ab) // it show array in console
+            if (i == -1 ) {
+                ab.push(a.toUpperCase())
+                 } else {
+                alert("city allready exist")
+            }
+            displaycities()
+        }
+        function displaycities() {
+            var data = " "
+            var i;
+            for (i = 0; i < ab.length; i++) {
+                data += "<li>" + ab[i] + "</li>"
+            }
+            document.getElementById("new").innerHTML = data
+        }
+    </script>
+</head>
+<body>
+    <label> Types array element: </label>
+    <input type="text" placeholder="give array elements" id="number1" /> <br /><br />
+    <input type="button" value="Submite" onclick="display()" />
+
+    <ul id="new" style="list-style-type:disc">   </ul>
+</body>
+</html>
