@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function Display() {
+
+
+
+            setInterval(function () {
+                var dateTime = new Date()
+                //var hrs = dateTime.getHours();
+                //var min = dateTime.getMinutes();
+                //var sec = dateTime.getSeconds();
+                var ab = dateTime.toLocaleTimeString()
+                //document.getElementById("hi1").innerHTML = hrs+":"+min+":"+sec
+                document.getElementById("hi2").innerHTML = ab
+            },2000)
+        }
+
+    </script>
+
+
+</head>
+<body onload="Display()">
+    <h1 id="hi1"></h1>
+    <h1 id="hi2"></h1>
+</body>
+</html>
