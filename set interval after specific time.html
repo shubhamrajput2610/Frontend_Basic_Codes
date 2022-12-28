@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+
+    <script>
+        function display() {
+
+            var i = 1;
+            document.getElementById("msg").innerHTML = i
+            setInterval(function () {
+                i++
+                document.getElementById("msg").innerHTML = i
+             
+            }, 1000)
+        }
+    </script>
+
+
+
+</head>
+<body onload="display()">
+
+
+    <h1 id="msg"> </h1>
+
+
+</body>
+</html>
