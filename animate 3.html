@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <style>
+        #dv1 {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            border: double;
+            position: absolute;
+            margin-left: 580px;
+            margin-top: 200px;
+        }
+
+   
+
+
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            for(var i = 0;i<=10;i++){
+            $("#start1").click(function () {
+                $("#dv1").animate({ "left": "700px"},100);
+                $("#dv1").animate({ "top": "300px" },1000);
+                $("#dv1").animate({ "left": "0" },100);     
+                $("#dv1").animate({ "top": "30px" },500);
+
+            })}
+          
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+
+
+    <input value="right" type="button" id="start1" />
+    <input value="left" type="button" id="end1" />
+    <input value="down" type="button" id="up1" />
+    <input value="up" type="button" id="down1" />
+    <hr />
+    <div id="dv1"> </div>
+
+</body>
+</html>
