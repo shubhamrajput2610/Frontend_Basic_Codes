@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <script>
+        function Fianl() {
+
+            var Roll_no = Number(document.getElementById("textroll").value);
+            document.getElementById("textrol").innerHTML = "Roll No of Student ="+Roll_no;
+
+            var givename = document.getElementById("textNo1").value;
+            document.getElementById("textNa").innerHTML = "Student Name = " + givename;
+
+        var a = Number(document.getElementById("texteng").value);
+        var b = Number(document.getElementById("textmat").value);
+        var c = Number(document.getElementById("textsci").value);
+
+        var Total = a + b + c ;
+        var persentage = Total / 3;
+
+        
+       
+        document.getElementById("tot").innerHTML = "Total = " + Total;
+        document.getElementById("per").innerHTML = "Persentage  =  " + persentage + "%";
+
+        
+        if (persentage >= 90) {
+            document.getElementById("gre").innerHTML = "Grade = A";
+            
+        } else if (persentage >= 65){
+            document.getElementById("gre").innerHTML = "Grade = B";
+        } else if (persentage >= 35) {
+            document.getElementById("gre").innerHTML = "Grade = C";
+        }
+        else {
+            document.getElementById("gre").innerHTML = "Grade = Fail";
+        }
+     
+
+        }
+    </script>
+
+    <title></title>
+
+</head>
+<body>
+    <table border="1">
+        
+        <tr>
+            <th>
+                Roll no:         
+            </th>
+            <td> <input type="text" id = "textroll"/> </td>
+        </tr>
+
+        <tr>
+            <th>
+                Name:
+            </th>
+            <td> <input type="text" id="textNo1"  name="name" /> </td>
+        </tr>
+
+
+        <tr>
+            <th>
+                English:
+            </th>
+            <td> <input type="text" id="texteng" /> </td>
+        </tr>
+
+        <tr>
+            <th>
+                Math:
+            </th>
+            <td> <input type="text" id="textmat" /> </td>
+        </tr>
+
+        <tr>
+            <th>
+                Science :
+            </th>
+            <td> <input type="text" id="textsci" /> </td>
+        </tr>
+
+        <tr>
+            
+            <td> <input type="button" value="Submit" onclick="Fianl()"  /> </td>
+        </tr>
+        
+         
+    </table>
+
+    <h2 id="textrol">   </h2>
+    <h2 id="textNa">   </h2>
+    <h2 id="tot">   </h2>
+    <h2 id="per">   </h2>
+    <h2 id="gre">   </h2>
+
+
+
+
+</body>
+</html>
