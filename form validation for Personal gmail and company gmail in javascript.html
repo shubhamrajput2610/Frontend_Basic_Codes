@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function valadation() {
+
+            var status = true;
+            var eid = document.forms["formname"]["id1"].value;
+            var ename = document.forms["formname"]["name1"].value;
+            var eemail = document.forms["formname"]["email1"].value;
+            var surname1 = document.forms["formname"]["surname1"].value;
+            var eemai2 = document.forms["formname"]["email2"].value;
+
+            // for chake empty text box
+            if (eid == '' || ename == '' || eemail == '') {
+                status = false
+                //document.getElementById("spenid").innerHTML = "please enter employee id"
+                alert("please enter valid information")
+                return false
+            }
+
+            
+            // for cheack the valid id 
+            if (eid == '') {
+                alert("please enter valid id")
+                return false
+            }
+            else {
+                var eidpath = /^[0-9]+$/;
+                if (!eid.match(eidpath)) {
+                    status = false
+                    alert("Please enter only numbers")
+                    return false;
+                }
+            }
+
+
+            // for cheack the valid name
+                if (ename == '') {
+                    alert("please enter valid name")
+                    return false  
+                  
+                } else {
+                    var eidpath2 = /^[a-z A-Z]+$/;
+                    if (!ename.match(eidpath2)) {
+                        status = false
+                        alert("Please enter only alphabates")
+                        return false;
+                    }
+                }
+
+
+
+            // for cheack the valid email
+                if (eemail == '') {
+                    alert("please enter valid name")
+                    return false
+
+                } else {
+                    var eidpath3 = /^[a-z 0-9]+@gmail.com$/;
+                    if (!eemail.match(eidpath3)) {
+                        status = false
+                        alert("Please enter only Emailid With @gmail.com")
+                        return false;
+                    }
+                }
+
+
+
+            //  for cheack the valid surname
+                if (surname1 == '') {
+                    alert("please enter valid name")
+                    return false
+
+                } else {
+                    var eidpath4 = /^[a-z A-Z]+$/;
+                    if (!surname1.match(eidpath4)) {
+                        status = false
+                        alert("Please enter only alphabates")
+                        return false;
+                    }
+                }
+
+
+            //  for cheack the valid scompany emailid
+                if (eemai2 == '') {
+                    alert("please enter valid name")
+                    return false
+
+                } else {
+                    var eidpath5 = /^[a-zA-Z0-9.]+[a-zA-Z0-9]+[@][a-zA-Z]+[.]+[a-zA-Z]$/;
+                    if (!eemai2.match(eidpath5)) {
+                        status = false
+                        alert("Please enter only company Gmail")
+                        return false;
+                    }
+                }
+            }
+    
+    </script>
+</head>
+<body>
+
+    <form name="formname" action="drude_op.html" onsubmit="return valadation()">
+        <label>Emp id </label>
+        <input type="text" name="id1" /><br /><br />
+
+        <span  id="spenid" ></span>
+
+        <label> Emp Name</label>
+        <input type="text" name="name1" /><br /><br />
+
+        <label> Emp SurName</label>
+        <input type="text" name="surname1" /><br /><br />
+
+        <label> Email Personal</label>
+        <input type="text" name="email1" /><br /><br />
+
+        <label> Email Company</label>
+        <input type="text" name="email2" /><br /><br />
+
+        <input type="submit" value="submit" />
+        <input type="reset" value="clear" />
+
+    
+    </form>
+         </body>
+</html>
