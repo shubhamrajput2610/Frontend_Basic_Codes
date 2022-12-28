@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+    <script>
+        student = []
+        var index = -1
+        function Add(){
+            var r = Number(document.getElementById("txtno").value);
+            var n = document.getElementById("txtname").value;
+            var st = { "rno": r, "Name": n }
+            student.push(st)
+            console.log(student)
+            display()
+            dataclean()
+        }
+        
+
+        function dataclean(){
+                        document.getElementById("txtno").value = " "
+            document.getElementById("txtname").value = " "
+        }
+
+
+            function display() {
+            var data="";
+            student.forEach(function (d, i){
+                data += "<tr><td>" + d.rno + "</td><td>" + d.Name + "</td><td>" +
+                    "<input type= 'button' onclick='removeelement(" + i + ")' value ='x' />" +
+                    "<input type= 'button' onclick='editdata(" + i + ")' value ='E' />" + "</td></tr>";
+            })
+            document.getElementById("tbldata").innerHTML=data;
+        }
+            function removeelement(p) {
+                student.splice(p, 1)
+                display()
+
+            }
+            function updatedata() {
+
+                var r = document.getElementById("txtno").value;
+                var n = document.getElementById("txtname").value;
+                var t = { "rno": r, "Name": n }
+                student[index] = t
+
+                dataclean()
+                 display()
+            }
+
+
+            function editdata(u) {
+                index = u
+                var s = student[u]
+                document.getElementById("txtno").value = s.rno
+                document.getElementById("txtname").value = s.Name
+
+                display()
+            }
+    </script>
+
+
+</head>
+<body>
+    <table border="1">
+        <tr><th> Roll no</th> <td><input type="text"  id="txtno"/></td></tr>
+        <tr><th> name</th> <td><input type="text" id="txtname" /></td></tr>
+        
+        
+       
+    </table>
+    <input type="button" value="submite" onclick="Add()" /> 
+    <input type="button" value="Update" onclick="updatedata()" />
+   <table border="1">
+
+       <tr>
+           <th>Roll</th>
+           <th>NAme</th>
+           <th>action</th>
+       </tr>
+       <tbody id="tbldata"></tbody>
+   </table>
+   
+</body>
+</html>
