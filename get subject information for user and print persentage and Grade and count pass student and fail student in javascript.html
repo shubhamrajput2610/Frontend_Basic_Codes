@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>hi</title>
+    <style>
+        table1,tr,th,td{
+            border-radius:10px
+        }
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: separate;
+           
+        }
+
+        th, td {
+            background-color: #edffbd;
+        }
+        input#button1, input#button3 {
+            font-size: 20px;
+            margin-left: 15px;
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+            input#button1:hover, input#button3:hover {
+                background-color: #ff0032;
+                color: white;
+            }
+            input#button2:hover {
+                background-color: #fee818;
+                color: white;
+            }
+
+        input#rol1:hover, input#name1:hover, input#english1:hover, input#math1:hover, input#science1:hover {
+            background-color:#f3f9d1
+        }
+        #id1:hover {
+            background-color: #91e06a;
+        }
+     
+
+    </style>
+    <script>
+        student = []
+        color = " "
+
+    function Displayoutput() {
+    var a = Number(document.getElementById("rol1").value);
+    var b = document.getElementById("name1").value;
+    var c = Number(document.getElementById("english1").value);
+    var d = Number(document.getElementById("math1").value);
+    var e = Number(document.getElementById("science1").value);
+
+    var Total =  c + d + e;
+    var persentage = Total / 3;
+
+    let greeting;
+    if (persentage >= 60) {
+        greeting = "A"
+        color = "Black"
+    } 
+    else if (persentage >= 35) {
+        greeting = "B"
+        color = "Black"
+    }
+else {
+        greeting = "Fail"
+    color = "red"
+}
+
+    var f = { "rol1": a, "name1": b, "english1": c, "math1": d, "science1": e, "total1": Total, "persentage1": persentage, "grade1": greeting ,"clr":color}
+
+  
+
+    student.push(f)
+    console.log(student)
+    Displaystudent()
+
+ 
+    }
+    function Displaystudent() {
+
+        var data = " "
+        var total = 0, totalpass = 0, totalfail = 0;
+        for (var i = 0; i < student.length; i++) {
+
+            if (student[i].persentage1 >= 35) {
+                totalpass++;
+            }
+            else {
+                totalfail++;
+            }
+
+            var total = totalpass + totalfail;
+
+            data += "<tr style='color: " + student[i].clr + "'><td>" + student[i].rol1 + "</td><td>" + student[i].name1 +
+                "</td><td>" + student[i].english1 +
+                "</td><td>" + student[i].math1 +
+                "</td><td>" + student[i].science1 +
+                "</td><td>" + student[i].total1 +
+                "</td><td>" + student[i].persentage1 +
+                "</td><td>" + student[i].grade1 +
+               "</td><td>" + "<input type= 'button' id='button2' onclick='delect(" + i + ")' value ='x' />" +
+               "</td>" + "</tr>"
+        }
+        document.getElementById("rol1").value = " "
+        document.getElementById("name1").value = " "
+        document.getElementById("english1").value = " "
+        document.getElementById("math1").value = " "
+        document.getElementById("science1").value = " "
+
+        document.getElementById("pas1").innerHTML = +totalpass;
+        document.getElementById("fail1").innerHTML = +totalfail;
+        document.getElementById("std1").innerHTML = +total;
+
+        document.getElementById("new").innerHTML = data
+        
+    }
+
+    function delect(p) {
+        student.splice(p, 1)
+        Displaystudent()
+
+    }
+    </script>
+</head>
+<body style="background-image: url('12.jpg');position:relative;background-repeat:no-repeat;background-position:center;background-size:cover">
+    
+    <h1 style="margin-left: 700px; margin-top: 40px;font-size:50px">Student record</h1>
+        <div  style="border: solid; width: 600px; margin-left: 450px; margin-top: 70px; border-radius: 10px;background-color:rgba(255,255,255,.2)">
+            <div class="col-md-12">
+                <table id="table1" border="1">
+                    <thead>
+                        <tr>
+                            <th id="id1">
+                                Roll No
+                            </th>
+                            <td> <input type="text" id="rol1" /></td>
+                        </tr>
+                        <tr>
+                            <th id="id1">
+                                Name
+                            </th>
+                            <td><input type="text" id="name1" /></td>
+                        </tr>
+                        <tr>
+                            <th id="id1">
+                                English
+                            </th>
+                            <td> <input type="text" id="english1" /></td>
+                        </tr>
+                        <tr>
+                            <th id="id1">
+                                Math
+                            </th>
+                            <td> <input type="text" id="math1" /></td>
+                        </tr>
+                        <tr>
+                            <th id="id1">
+                                Science
+                            </th>
+                            <td> <input type="text" id="science1" /></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <table border="1" >
+                <tr>
+                    <th>Summary</th>
+                </tr>
+                <tr>
+                    <th>Total Student count:</th>
+                    <th id="std1"></th>
+                </tr>
+                <tr>
+                    <th>
+                        Pass student count:
+                    </th>
+                    <th id="pas1"></th>
+                </tr>
+                <tr>
+                    <th>
+                        Fail student count:
+                    </th>
+                    <th id="fail1"></th>
+                </tr>
+
+
+            </table>
+            <hr />
+            <input type="button" id="button1"  onclick="Displayoutput()" value="Display" />
+
+            <hr />
+            <h1 id="total1"></h1>
+            <h1 id="persentage1"></h1>
+            <h1 id="grade1"></h1>
+            <table border="1">
+
+                <thead>
+                    <tr>
+                        <th> Roll number</th>
+                        <th> Name</th>
+                        <th> English</th>
+                        <th> Math</th>
+                        <th> Science</th>
+                        <th> Total Marks</th>
+                        <th> Persentage</th>
+                        <th> Grade</th>
+
+                    </tr>
+                </thead>
+                <tbody id="new"></tbody>
+            </table>
+
+        </div>
+
+   
+</body>
+</html>
