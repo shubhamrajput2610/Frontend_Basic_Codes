@@ -1,0 +1,74 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function TotalANdpersentage() {
+
+            
+            var a = Number(document.getElementById("number1").value);
+            var b = Number(document.getElementById("number2").value);
+            var c = Number(document.getElementById("number3").value);
+            var d = Number(document.getElementById("number4").value);
+            var e = Number(document.getElementById("number5").value);
+
+            var Total = a + b + c + d + e;
+            var persentage = Total / 5;
+            document.getElementById("new2").innerHTML = " OUtoff = 500 " ;
+            document.getElementById("new").innerHTML = "Total = " + Total;
+            document.getElementById("per").innerHTML = "Persentage  =  " + persentage + "%";
+
+            let greeting;
+            if (persentage >= 90) {
+                greeting = "A"
+            } else if (persentage >= 75){
+                greeting = "B"
+            } else if (persentage >= 50) {
+                greeting = "C"
+            }
+            else {
+                greeting = "Fail"
+            }
+
+            document.getElementById("per1").innerHTML = greeting;
+            
+
+        }
+       
+    </script>
+</head>
+<body>
+
+
+    <fieldset>
+        <legend>Total_ANd_persentage</legend>
+
+        <label> English: </label>
+        <input type="text" placeholder="English Marks" id="number1" /> <br /><br />
+
+        <label> Math: </label>
+        <input type="text" placeholder="Math Marks" id="number2" /> <br /><br />
+
+       <label>Science:</label>
+        <input type="text" placeholder="Science Marks" id="number3" /> <br /><br />
+
+        <label>Marathi:</label>
+        <input type="text" placeholder="Mrathi Marks" id="number4" /> <br /><br />
+
+        <label>Social Science:</label>
+        <input type="text" placeholder="Social Science Marks" id="number5" /> <br /><br />
+
+        <input type="button" value="Submite" onclick="TotalANdpersentage()" />
+        <hr />
+        <h1 id="new2">   </h1>
+        <h1 id="new">   </h1>
+        <h1 id="per">   </h1>
+        <h1 id="per1">   </h1>
+        
+        
+
+        </fieldset>
+
+</body>
+</html>
