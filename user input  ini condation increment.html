@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script> 
+        function ans() {
+            var a = Number(document.getElementById("init").value);
+            var b = Number(document.getElementById("cond").value);
+            var c = Number(document.getElementById("incre").value);
+            
+            var data = "";
+            for (var i = a; i <= b; i = i + c)
+           {
+              data+= "<h1>"+ i +"</h1>";
+            } document.getElementById("sub").innerHTML = data;
+
+        }
+       </script>
+</head>
+<body>
+    <label> initilization </label> 
+    <input type="text" id="init"  />  <br /><br />
+    <label> condation </label>
+    <input type="text" id="cond"/>  <br /> <br />
+    <label>increment </label> 
+    <input type="text" id="incre"/>  <br /> <br />
+    <input type="button" value="submite" onclick="ans()"/> <br /> <br />
+    <h1 id="sub"> </h1>
+</body>
+</html>
