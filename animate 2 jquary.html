@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <style>
+
+        #dv1 {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            border: double;
+            position: absolute;
+            margin-left: 580px;
+            margin-top: 200px;
+        }
+
+        #start1:hover {
+            color: #00ffff;
+            background-color:#ff0000
+        }
+        #end1:hover {
+            color: #00ffff;
+            background-color: #ff0000;
+        }
+        #up1:hover {
+            color: #00ffff;
+            background-color: #ff0000;
+        }
+        #down1:hover {
+            color: #00ffff;
+            background-color: #ff0000;
+        }
+        #start1 {
+            color: #00ffff;
+            background-color: #ff4ddd;
+        }
+
+        #end1 {
+            color: #00ffff;
+            background-color: #ff4ddd;
+        }
+
+        #up1 {
+            color: #00ffff;
+            background-color: #ff4ddd;
+        }
+
+        #down1 {
+            color: #00ffff;
+            background-color: #ff4ddd ;
+            color:#f63bb2
+        }
+
+
+
+
+    </style>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#start1").click(function () {
+                $("#dv1").animate({ "left": "+=100px" }, 300).css({ "background-color": "#4cff00" });
+
+            })
+            $("#end1").click(function () {
+                $("#dv1").animate({ "left": "-=100px" }, 300).css({ "background-color": "#68f83b" });
+               
+            })
+            $("#up1").click(function () {
+                $("#dv1").animate({ "bottom": "-=100px" }, 300).css({ "background-color": "#f63bb2" });
+
+            })
+            $("#down1").click(function () {
+                $("#dv1").animate({ "bottom": "+=100px" }, 300).css({ "background-color": "yellow" });
+
+            })
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+
+
+    <input value="right" type="button" id="start1" />
+    <input value="left" type="button" id="end1" />
+    <input value="down" type="button" id="up1" />
+    <input value="up" type="button" id="down1" />
+    <hr />
+    <div id="dv1"> </div>
+
+</body>
+</html>
