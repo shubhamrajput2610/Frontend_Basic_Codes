@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <style>
+             #button1:hover{
+    color:#ff0000
+}
+        #table2{
+            float:left;
+            margin-left:50px
+                
+        }
+        #table1{
+            float:left;
+            margin-left:390px
+                
+        }
+        tr,td,th{
+            background-color:#eccbcb
+
+        }
+        text{
+            background-color:#e0c6c6
+        }
+    </style>
+    <script>
+        var states = [{ 'stateid': 111, "statename": "Maharashtra" }, { 'stateid': 2222, "statename": "Rajasthan" }, { 'stateid': 333, "statename": "Goa" }]
+        student = []
+        var citys = [{ "cityid": 1, "cityname": "jalagon", 'stateid': 111 },
+                          { "cityid": 2, "cityname": "pune", 'stateid': 111 },
+                          { "cityid": 3, "cityname": "mumbai", 'stateid': 111 },
+                          { "cityid": 4, "cityname": "dhule", 'stateid': 111 },
+                                 { "cityid": 5, "cityname": "Jodhpur", 'stateid': 2222 },
+                                 { "cityid": 6, "cityname": "Kota ", 'stateid': 2222 },
+                                 { "cityid": 7, "cityname": "Udaipur ", 'stateid': 2222 },
+                                 { "cityid": 8, "cityname": "Bikaner ", 'stateid': 2222 },
+         { "cityid": 9, "cityname": "Margao", 'stateid': 333 },
+         { "cityid": 10, "cityname": "Panaji ", 'stateid': 333 },
+         { "cityid": 11, "cityname": "Mapusa", 'stateid': 333 },
+         { "cityid": 12, "cityname": "Ponda", 'stateid': 333 }]
+
+        function Data1() {
+            var a = Number(document.getElementById("textroll").value);
+            var b = document.getElementById("textna").value;
+            var c = Number(document.getElementById("texteng").value);
+            var d = Number(document.getElementById("textma").value);
+            var e = Number(document.getElementById("textsci").value);
+            var t = c + d + e
+            document.getElementById("textto").value = t
+            var persentage = t / 3
+            let n = persentage.toFixed(2)
+            persentage = n
+            document.getElementById("textper").value = persentage
+
+            let greeting;
+            if (persentage >= 90) {
+                greeting = "A"
+            } else if (persentage >= 75) {
+                greeting = "B"
+            } else if (persentage >= 50) {
+                greeting = "C"
+            }
+            else {
+                greeting = "Fail"
+            }
+            document.getElementById("textgre").value = greeting
+            
+        }
+
+        function json123() {
+
+            var a = Number(document.getElementById("textroll").value);
+            var b = document.getElementById("textna").value;
+            var state = document.getElementById("ddstate").value;
+            var citys = document.getElementById("ddcity").value;
+            var c = Number(document.getElementById("texteng").value);
+            var d = Number(document.getElementById("textma").value);
+            var e = Number(document.getElementById("textsci").value);
+            var t = Number(document.getElementById("textto").value)
+            var persentage = document.getElementById("textper").value 
+            var greeting = document.getElementById("textgre").value
+
+            var s_nm = document.getElementById("ddstate");
+            var statenm = s_nm.options[s_nm.selectedIndex].text;
+            var c_nm = document.getElementById("ddcity");
+            var citynm = c_nm.options[c_nm.selectedIndex].text;
+            
+            var f = { "textroll": a, "textna": b, "ddstate": statenm, "ddcity": citynm, "texteng": c, "textma": d, "textsci": e, "textto": t, "textper": persentage, "textgre": greeting }
+            
+            student.push(f);
+            console.log(student);
+
+
+            document.getElementById("textroll").value = " "
+            document.getElementById("textna").value   = " "
+            document.getElementById("texteng").value  = " "
+            document.getElementById("textma").value   = " "
+            document.getElementById("textsci").value  = " "
+            document.getElementById("textto").value   = " "
+            document.getElementById("textper").value  = " "
+            document.getElementById("textgre").value  =" "
+
+            printdisplay();
+            Fillcity()
+        }
+        function printdisplay()
+        {
+            var data = " "
+            for (var i = 0; i < student.length; i++) {
+                data += "<tr><td>" + student[i].textroll +
+                    "</td><td>" + student[i].textna +
+                    "</td><td>" + student[i].ddstate +
+                    "</td><td>" + student[i].ddcity +
+                    "</td><td>" + student[i].texteng +
+                    "</td><td>" + student[i].textma +
+                    "</td><td>" + student[i].textsci +
+                    "</td><td>" + student[i].textto +
+                    "</td><td>" + student[i].textper +
+                    "</td><td>" + student[i].textgre +
+                   "</td>" + "</tr>"
+            }
+            document.getElementById("new1").innerHTML = data;
+        }
+
+        function addstate() {
+            var data = " <option selected disabled> Please select Location </option> "
+            states.forEach(function (d, i) {
+                data += "<option value = " + d.stateid + ">" + d.statename + "</option>"
+            })
+            document.getElementById("ddstate").innerHTML = data;
+         
+        }
+
+        function Fillcity() {
+            var s = document.getElementById("ddstate").value;
+            var data = "<option selected disabled> Please select Location </option>"
+            citys.forEach(function (d, i) {
+                if (d.stateid == s) {
+                    data += "<option value =" + d.cityid + ">" + d.cityname + "</option>"
+                }
+            })
+            document.getElementById("ddcity").innerHTML = data;
+           
+        }
+
+
+  
+
+    </script>
+
+</head>
+<body onload="addstate()">
+        <h1 style="text-align:center"> Calculate total persentage Greade With onchange Function</h1>
+    <div style="border:2px solid Black;height:500px;">
+        <table border="1" id="table1">
+            <tr><th>Roll no </th><td><input type="text" id="textroll" /></td></tr>
+
+            <tr><th>Name </th><td><input type="text" id="textna" /></td></tr>
+
+            <tr><th> Select state </th><td><select id="ddstate" onchange="Fillcity()"><option> </option></select></td></tr>
+
+            <tr><th> Select city </th><td><select id="ddcity"><option> </option></select></td></tr>
+
+            <tr><th>English </th><td><input type="text" onchange="Data1()" id="texteng" /></td></tr>
+
+            <tr><th>Math </th><td><input type="text" onchange="Data1()" id="textma" /></td></tr>
+
+            <tr><th>Science </th><td><input type="text" onchange="Data1()" id="textsci" /></td></tr>
+
+            <tr><th> Total </th><td><input type="text"  id="textto" /></td></tr>
+
+            <tr><th>Persentage </th><td><input type="text" id="textper" /></td></tr>
+
+            <tr><th>Gread </th><td><input type="text"  id="textgre" /></td></tr>
+            
+         
+
+            <tr> <td> <input type="button" value="Submite" id="button1" onclick="json123()" /> </td> </tr>
+        </table>
+
+        <table id="table2" border="1">
+            <thead>
+                <tr>
+                    <th>Roll no </th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>English</th>
+                    <th>MAth</th>
+                    <th>Science</th>
+                    <th>Total</th>
+                    <th>Persentage</th>
+                    <th>Gread</th>
+                </tr>
+            </thead>
+            <tbody id="new1">
+        </table>
+    </div>
+</body>
+</html>
