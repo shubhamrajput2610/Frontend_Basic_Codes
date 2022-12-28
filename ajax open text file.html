@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#bat1").click(function () {
+
+
+
+                $.get("TextFile.txt", function (d) {
+
+                    $("#id1").html(d)
+                })
+
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="bat1" value="submite"/>
+    <h1 id="id1"></h1>
+    <a href="TextFile.txt">TextFile.txt</a>
+    <!--<a href="New%20Text%20Document%20(2).txt">New Text Document (2).txt</a>-->
+</body>
+</html>
