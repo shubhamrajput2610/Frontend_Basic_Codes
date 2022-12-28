@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script>
+        function output() {
+
+            var n = Number(document.getElementById("tab").value);
+              var  count = 0
+
+              for (var i = 2; i < n; i++) {
+                  if (n % i == 0) {
+                      count++;
+                      break;
+                  }
+              
+              }    
+              if (count == 0) 
+                  {
+                      document.getElementById("abc").innerHTML = n+ " Number is prime"  ;
+                  }
+                  else { document.getElementById("abc").innerHTML = n+ " Number is not a prime" ;}
+           
+        }
+    </script>
+    
+</head>
+<body>
+    <label> chacked given number is prime or not? </label> <br /> <br />
+    <input type="text" id="tab" />
+
+    <input type="button"  value="Submite" onclick="output()" /> <br /><br />
+    <h1 id="abc"></h1>
+</body>
+</html>
