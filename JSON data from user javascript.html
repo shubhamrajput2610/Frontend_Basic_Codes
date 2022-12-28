@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON data from user</title>
+    <script>
+        var students=[];
+        function Addstudents(){
+            var a=Number(document.getElementById("Rno").value);
+            var b=document.getElementById("Name").value;
+            var c=Number(document.getElementById("Marks").value);
+            var d= {"Rno":a,"Name":b,"Marks":c};
+            // var i=students.indexOf(a,b,c);
+            students.push(d);
+            Displaystudents();
+        }
+
+        function Displaystudents(){
+            var data="";
+        for(var i=0;i<students.length;i++){
+            data+= "<tr><td>"+students[i].Rno +"</td><td>"+students[i].Name+"</td><td>"+students[i].Marks +"</td></tr>";
+        }
+        document.getElementById("tbldata").innerHTML=data;
+        }
+        
+    </script>
+</head>
+<body>
+    <div style="border:solid; width: 500px;">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    Roll No  </th>
+                   <td> <input type="text" id="Rno" placeholder="Roll No"></td>
+               
+            </tr>
+            <tr>
+                <th>
+                    Name </th>
+                  <td>  <input type="text" id="Name" placeholder="Name"></td>
+                
+            </tr>
+            <tr>
+                <th>
+                    Marks  </th>
+                 <td>   <input type="text" id="Marks" placeholder="Marks"> </td>
+               
+            </tr>
+        </thead>
+        </table>
+    <input type="button" value="Display" onclick="Addstudents()">
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Rno</th>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody id="tbldata">
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
