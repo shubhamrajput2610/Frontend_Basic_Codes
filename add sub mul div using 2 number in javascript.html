@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script>
+
+        function switchcase(cal){
+            var a = Number(document.getElementById("number1").value);
+            var b = Number(document.getElementById("number2").value);
+            var result = " "
+
+            switch (cal){
+                case 1 : 
+                    var c = a + b;
+                    document.getElementById("iddd1").innerHTML = "Addition = "+c;
+                    break;
+                
+                case 2: 
+                    var c = a - b;
+                    document.getElementById("iddd1").innerHTML = "Subtract ="+c;
+                    break;
+                
+                case 3:
+                    
+                        var c = a * b;
+                        document.getElementById("iddd1").innerHTML = "Mult ="+c;
+                       break;
+                    
+                case 4: 
+                    var c = a / b;
+                    document.getElementById("iddd1").innerHTML = "Divison = " +c;
+                    break;
+                
+                default:
+                    alert("No result found ");
+                    break;
+            
+            }
+
+            
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+    <label>num 1 </label>
+    <input type="text" id="number1"/> <br /> <br />
+    <label> num 2 </label>
+    <input type="text" id="number2"/> <br /> <br />
+
+    <input type="button" value="Addition" id="add" onclick="switchcase(1)"/>
+    <input type="button"  value="Subtract" id="sub" onclick="switchcase(2)"/>
+    <input type="button" value="Multiplication" id="mul" onclick="switchcase(3)"/>
+    <input type="button"  value="Division" id="div" onclick="switchcase(4)"/>
+
+    <h1 id="iddd1"></h1>
+ 
+
+</body>
+</html>
