@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script>
+
+        function Display() {
+            var data = " "
+            var i;
+            var student = [{ "roll": 1, "name": "Ajay", "mark": 80 },
+        { "roll": 2, "name": "Vijay", "mark": 70 },
+        { "roll": 3, "name": "Sujay", "mark": 80 },
+        { "roll": 4, "name": "Nirjay", "mark": 90 }]
+            console.log(student)
+            for (i = 0; i < student.length; i++) {
+                data += "<tr><td>"+student[i].roll+"</td><td>"+student[i].name+"</td><td>"+student[i].mark+"</td></tr>";
+            }
+            document.getElementById("tnew").innerHTML = data  
+        }
+    </script>
+</head>
+<body>
+
+
+    <input type="button" value="Submit" onclick="Display()"/>
+    <hr />
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>
+                    roll
+                </th>
+                <th>
+                    name
+                </th>
+                <th>
+                    marks
+                </th>
+            </tr>
+
+        </thead>
+        <tbody id="tnew"></tbody>
+    </table>
+
+</body>
+</html>
