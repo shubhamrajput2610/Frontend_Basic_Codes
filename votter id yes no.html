@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script>
+        function Agevoterid(){
+            var Enter_age = Number(document.getElementById("Age12").value);
+            
+
+            if (Enter_age >= 18) {
+                document.getElementById("enage").innerHTML = "You are Eligible for voting";
+            }
+            else {
+                document.getElementById("enage").innerHTML = "You are Not Eligible for voting. YOu need more then 18 age" ;
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h1> Am i Eligible for Voing ?</h1>
+    <table>
+        <tr>
+            <th>
+                Enter Age:
+            </th>
+            <td> <input type="text" id="Age12" /> </td>
+        </tr>
+
+
+        <tr>
+
+            <td> <input type="button" value="Submit" onclick="Agevoterid()" /> </td>
+
+        </tr>
+    </table>
+    <h2 id="enage"> </h2>
+</body>
+</html>
