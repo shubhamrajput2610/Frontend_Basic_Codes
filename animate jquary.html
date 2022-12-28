@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <style>
+        #dv1 {
+            background-color: red;
+            height: 50px;
+            width: 50px;
+            border: double;
+        }
+    #dv2 {
+        background-color: #ffd800;
+        height: 75px;
+        width: 75px;
+        border: double;
+        font-size
+    }
+
+    #dv3 {
+        background-color: #b6ff00;
+        height: 100px;
+        width: 100px;
+        border: double;
+    }
+        #id2{
+            border-radius:100px
+        }
+    </style >
+
+  
+    
+    <script>
+
+        $(document).ready(function () {
+           
+            $("#start1").click(function () {
+                $("#dv1").animate({ "height": "+=10px", "width": "+=10px" })
+                $("#dv2").animate({ "height": "+=20px", "width": "+=20px" })
+                $("#dv3").animate({ "height": "+=30px", "width": "+=30px" })
+                $("#id1").animate({ "font-size": "+=30px" })
+                $("#id2").animate({ "height": "+=30px", "width": "+=30px" })
+
+     
+            })
+            $("#end1").click(function () {
+                $("#dv1").animate({ "height": "-=10px", "width": "-=10px" })
+                $("#dv2").animate({ "height": "-=20px", "width": "-=20px" })
+                $("#dv3").animate({ "height": "-=30px", "width": "-=30px" })
+                $("#id1").animate({ "font-size": "-=30px" })
+                $("#id2").animate({ "height": "-=30px", "width": "-=30px" })
+
+            })
+        })
+    </script>
+</head>
+<body>
+
+
+
+    <input value="start" type="button" id="start1" />
+    <input value="end" type="button" id="end1" />
+
+
+    <h1 id="id1">hi welcome </h1>
+  
+    <img id="id2"src="1.jpeg" /> 
+
+    <hr />
+    <div id="dv1"> </div>
+    <div id="dv2"> </div>
+    <div id="dv3"> </div>
+</body>
+</html>
