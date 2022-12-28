@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function displaydt() {
+            var dt = new Date();
+            document.getElementById("a1").innerHTML = dt.toString();
+            document.getElementById("a2").innerHTML = dt.toDateString();
+            document.getElementById("a3").innerHTML = dt.toLocaleDateString();
+            document.getElementById("a4").innerHTML = dt.toTimeString();
+            document.getElementById("a5").innerHTML = dt.toLocaleTimeString()
+            document.getElementById("a6").innerHTML = dt.getFullYear();
+            document.getElementById("a7").innerHTML = (dt.getMonth() + 1);
+            document.getElementById("a8").innerHTML = dt.getDay();
+            document.getElementById("a9").innerHTML = dt.getTime();
+            document.getElementById("a10").innerHTML = dt.getHours();
+            document.getElementById("a11").innerHTML = dt.getMinutes();
+            document.getElementById("a12").innerHTML = dt.getSeconds();
+            document.getElementById("a13").innerHTML = dt.getTimezoneOffset()
+            document.getElementById("a14").innerHTML = dt.getYear()
+        }
+    </script>
+</head>
+<body onload="displaydt()">
+    <h2 id="a1">1</h2>
+    <h2 id="a2">2</h2>
+    <h2 id="a3">3</h2>
+    <h2 id="a4">4</h2>
+    <h2 id="a5">5</h2>
+    <h2 id="a6">6</h2>
+    <h2 id="a7">7</h2>
+    <h2 id="a8">8</h2>
+    <h2 id="a9">9</h2>
+    <h2 id="a10">10</h2>
+    <h2 id="a11">11</h2>
+    <h2 id="a12">12</h2>
+    <h2 id="a13">13</h2>
+    <h2 id="a14">14</h2>
+</body>
+</html>
