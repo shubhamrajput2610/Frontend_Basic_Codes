@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        
+
+            getallstates()
+            $("#states1").change(function(){getallcity()})
+            //getallcity()
+        })
+
+        function getallstates() {
+           
+            $.ajax({
+
+                url:"https://ciitinstitute.com/api/state/",
+                method: "get",
+                contexttype: 'application/json',
+                success: function (resp) {
+                    console.log(resp)
+                    $.each(resp, function (i, d) {
+                        $("#states1").append("<option value =" + d.state_id + ">" + d.state_name + "</option>")
+                    })
+                }
+            })
+        }
+        function getallcity() {
+            var a = $("#states1").val();
+
+                $.ajax({
+
+                    url: 'https://ciitinstitute.com/api/stateidwisecities/' +a,
+                    method: "get",
+                    contexttype: 'application/json',
+                    success: function (resp1) {
+                        console.log(resp1)
+                        $("#citys1").empty();
+                      
+                        $.each(resp1, function(i, d) {
+                            //if (d.state_id == a) {
+                           $("#citys1").append("<option value =" + d.city_id + ">" + d.city_name + "</option>")
+                            //}
+                        })
+
+                    }
+
+                })
+            }
+       
+
+    </script>
+</head>
+<body>
+
+
+    <table border="1">
+
+
+        <tr><th> State : </th> <td><select id="states1" ><option selected disabled> Please select Location </option> <option> </option> </select> </td></tr>
+
+        <tr><th> city : </th> <td><select id="citys1">  <option> </option> </select> </td></tr>
+
+
+    </table>
+</body>
+</html>
