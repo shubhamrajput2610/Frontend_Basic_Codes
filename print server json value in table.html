@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            adddata()
+           FilterData()
+        })
+
+        function adddata() {
+         
+            $.ajax({
+
+                url: "https://ciitinstitute.com/api/state/",
+                method: "get",
+                contexttype: 'application/json',
+                success: function (resp) {
+                    console.log(resp)
+                    //$.each(resp, function (i, d) {
+                    //    $("#new").append("<tr><td>" + resp[i].state_id + "</td><td>" + resp[i].state_name + "</td></tr>")
+                    //})
+                    for (var i = 0; i < resp.length; i++) {
+                        $("#new").append("<tr><td>" + resp[i].state_id + "</td><td>" + resp[i].state_name + "</td></tr>")
+                    }
+                }
+            })
+        }
+      
+    </script>
+</head>
+<body onload="Displaystudents()">
+    <table border="1">
+
+        <tr> <th>State ID </th><td><input type="text" id="stateid1" /></td></tr>
+        <tr> <th>State name </th><td><input type="text" id="statename1" /></td></tr>
+        <tr> <td><input type="button" value="submite" id="bat" /></td></tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <th>state name </th>
+            <th>state id </th>
+        </tr>
+        <tbody id="new"></tbody>
+
+    </table>
+</body>
+</html>
